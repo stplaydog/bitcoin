@@ -13,7 +13,7 @@
 class CAddrManTest : public CAddrMan
 {
 public:
-    explicit CAddrManTest(bool makeDeterministic = true)
+    explicit CAddrManTest(bool makeDeterministic = true) // pay attention to this explicit
     {
         if (makeDeterministic) {
             //  Set addrman addr placement to be deterministic.
@@ -85,6 +85,7 @@ static CService ResolveService(std::string ip, int port = 0)
 
 BOOST_FIXTURE_TEST_SUITE(addrman_tests, BasicTestingSetup)
 
+// READ stplaydog 06/27/2019
 BOOST_AUTO_TEST_CASE(addrman_simple)
 {
     CAddrManTest addrman;

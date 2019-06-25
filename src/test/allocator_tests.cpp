@@ -13,6 +13,7 @@
 
 BOOST_FIXTURE_TEST_SUITE(allocator_tests, BasicTestingSetup)
 
+// READ stplaydog 06/27/2019
 BOOST_AUTO_TEST_CASE(arena_tests)
 {
     // Fake memory base address for testing
@@ -128,6 +129,7 @@ BOOST_AUTO_TEST_CASE(arena_tests)
     BOOST_CHECK(b.stats().free == synth_size);
 }
 
+// READ stplaydog 06/27/2019
 /** Mock LockedPageAllocator for testing */
 class TestLockedPageAllocator: public LockedPageAllocator
 {
@@ -160,10 +162,11 @@ private:
     int lockedcount;
 };
 
+// READ stplaydog 06/27/2019
 BOOST_AUTO_TEST_CASE(lockedpool_tests_mock)
 {
     // Test over three virtual arenas, of which one will succeed being locked
-    std::unique_ptr<LockedPageAllocator> x = MakeUnique<TestLockedPageAllocator>(3, 1);
+    std::unique_ptr<LockedPageAllocator> x = MakeUnique<TestLockedPageAllocator>(3, 1); // pay attention to 3
     LockedPool pool(std::move(x));
     BOOST_CHECK(pool.stats().total == 0);
     BOOST_CHECK(pool.stats().locked == 0);
@@ -206,6 +209,7 @@ BOOST_AUTO_TEST_CASE(lockedpool_tests_mock)
     BOOST_CHECK(pool.stats().used == 0);
 }
 
+// READ stplaydog 06/27/2019
 // These tests used the live LockedPoolManager object, this is also used
 // by other tests so the conditions are somewhat less controllable and thus the
 // tests are somewhat more error-prone.

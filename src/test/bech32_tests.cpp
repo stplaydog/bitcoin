@@ -22,6 +22,7 @@ static bool CaseInsensitiveEqual(const std::string &s1, const std::string &s2)
     return true;
 }
 
+// READ stplaydog 06/27/2019
 BOOST_AUTO_TEST_CASE(bip173_testvectors_valid)
 {
     static const std::string CASES[] = {
@@ -42,6 +43,7 @@ BOOST_AUTO_TEST_CASE(bip173_testvectors_valid)
     }
 }
 
+// READ stplaydog 06/27/2019
 BOOST_AUTO_TEST_CASE(bip173_testvectors_invalid)
 {
     static const std::string CASES[] = {

@@ -9,6 +9,7 @@
 
 BOOST_FIXTURE_TEST_SUITE(base32_tests, BasicTestingSetup)
 
+// READ stplaydog 06/27/2019
 BOOST_AUTO_TEST_CASE(base32_testvectors)
 {
     static const std::string vstrIn[]  = {"","f","fo","foo","foob","fooba","foobar"};
