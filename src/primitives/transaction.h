@@ -363,6 +363,7 @@ public:
         for(uint64_t i=0; i<vin.size(); i++) {
            ret += vin[i].ToString();
         }
+        ret += "\n+++\n";
         for(uint64_t i=0; i<vout.size(); i++) {
            ret += vout[i].ToString();
         }

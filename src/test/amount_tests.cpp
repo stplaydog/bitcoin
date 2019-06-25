@@ -10,6 +10,7 @@
 
 BOOST_FIXTURE_TEST_SUITE(amount_tests, BasicTestingSetup)
 
+// READ stplaydog 06/26/2019
 BOOST_AUTO_TEST_CASE(MoneyRangeTest)
 {
     BOOST_CHECK_EQUAL(MoneyRange(CAmount(-1)), false);
@@ -19,6 +20,7 @@ BOOST_AUTO_TEST_CASE(MoneyRangeTest)
     BOOST_CHECK_EQUAL(MoneyRange(MAX_MONEY + CAmount(1)), false);
 }
 
+// READ stplaydog 06/26/2019
 BOOST_AUTO_TEST_CASE(GetFeeTest)
 {
     CFeeRate feeRate, altFeeRate;
@@ -86,6 +88,7 @@ BOOST_AUTO_TEST_CASE(GetFeeTest)
     CFeeRate(MAX_MONEY, std::numeric_limits<size_t>::max() >> 1).GetFeePerK();
 }
 
+// READ stplaydog 06/26/2019
 BOOST_AUTO_TEST_CASE(BinaryOperatorTest)
 {
     CFeeRate a, b;
@@ -103,6 +106,7 @@ BOOST_AUTO_TEST_CASE(BinaryOperatorTest)
     BOOST_CHECK(a == b);
 }
 
+// READ stplaydog 06/26/2019
 BOOST_AUTO_TEST_CASE(ToStringTest)
 {
     CFeeRate feeRate;
