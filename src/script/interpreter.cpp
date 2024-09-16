@@ -1469,6 +1469,10 @@ static bool VerifyWitnessProgram(const CScriptWitness& witness, int witversion, 
     return true;
 }
 
+// scriptPubKey is a locking script placed on the output of a Bitcoin transaction that requires certain conditions to be met 
+// in order for a recipient to spend his/her bitcoins; scriptPubKey is also known as PubKey Script outside of the Bitcoin code. 
+// Conversely, scriptSig is the unlocking script that satisfies the conditions placed on the output by the scriptPubKey, 
+// and  is what allows it to be spent; outside of code, scriptSig is also known as Signature scripts.
 bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const CScriptWitness* witness, unsigned int flags, const BaseSignatureChecker& checker, ScriptError* serror)
 {
     static const CScriptWitness emptyWitness;
